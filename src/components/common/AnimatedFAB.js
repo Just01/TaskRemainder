@@ -13,7 +13,9 @@ export default class AnimatedFAB extends Component {
   render() {
     return (
       <Animated.View style={this.position.getLayout()}>
-        <TouchableOpacity style={styles.ball}>
+        <TouchableOpacity
+          onPress={this.props.goTo}
+          style={styles.ball}>
 
         </TouchableOpacity>
       </Animated.View>

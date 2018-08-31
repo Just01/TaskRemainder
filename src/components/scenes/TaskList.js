@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 import { Card, Button } from 'react-native-elements'
-import { TEST_DATA_1, TEST_DATA_2 } from '../../../data/data'
+import { Actions } from 'react-native-router-flux'
+import { TEST_DATA_1, TEST_DATA_2 } from '../../data/data'
 import TaskDeck from './TaskDeck'
-import AnimatedFAB from "../../common/AnimatedFAB"
+import AnimatedFAB from "../common/AnimatedFAB"
 
 export default class TaskList extends Component {
   state = {
@@ -61,7 +62,9 @@ export default class TaskList extends Component {
           renderCard={this.renderCard}
           renderNoMoreCards={this.renderNoMoreCards}
         />
-        <AnimatedFAB />
+        <AnimatedFAB
+          goTo={() => Actions.addTask()}
+        />
       </View>
     )
   }
