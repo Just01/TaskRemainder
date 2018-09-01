@@ -4,7 +4,7 @@ import { Card, Button } from 'react-native-elements'
 import { Actions } from 'react-native-router-flux'
 import { TEST_DATA_1, TEST_DATA_2 } from '../../data/data'
 import TaskDeck from './TaskDeck'
-import AnimatedFAB from "../common/AnimatedFAB"
+import AnimatedFAB from '../common/AnimatedFAB'
 
 export default class TaskList extends Component {
   state = {
@@ -14,12 +14,9 @@ export default class TaskList extends Component {
   renderCard = (item) => {
     return (
       <Card
-        title={item.text}
+        title={item.title}
         image={{ uri: item.uri }} >
-        <Text style={{ margin: 10 }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-        </Text>
+        <Text style={{ margin: 10 }}>{item.description}</Text>
         <Button
           backgroundColor="black"
           textStyle={{ color: 'yellow', fontWeight: 'bold' }}

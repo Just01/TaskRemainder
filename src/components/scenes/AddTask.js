@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
+import { connect } from 'react-redux'
+import { titleChanged, descriptionChanged, typeChanged } from '../../redux/actions'
 
-export default class AddTask extends Component {
+class AddTask extends Component {
   render() {
     return (
       <View>
@@ -10,3 +12,11 @@ export default class AddTask extends Component {
     )
   }
 }
+
+const mapStateToProps = ({ addTask }) => {
+  const { title, description, type } = addTask
+
+  return { title, description, type }
+}
+
+export default connect(mapStateToProps, { titleChanged, descriptionChanged, typeChanged })(AddTask)
